@@ -36,17 +36,7 @@ $.extend(
 	    },
 	    getHash: function () {
 			var lc = window.location.hash.substring(1);
-			// var data = {}
 			data = lc.split('=');
-			console.log(123123123)
-			// data.name = lc[0];
-			// data.value = lc[1];
-			/*console.log(data);
-			if (data.length) {
-				return data[1];
-			} else {
-				return lc;
-			}*/
 			return data[1] ? data[1] : data[0];
 		},
 		getSearch: function () {
@@ -68,10 +58,6 @@ $.extend(
 			}
 			return data;
 		},
-
-		// EventUtil
-
-
 		addHandler : function (element, type, handler) {
 			if (element.addEventListener) {
 				element.addEventListener(type, handler, false);
@@ -117,14 +103,6 @@ $.extend(
 			event.pageY = event.pageY ? event.pageY : event.clientY+(document.body.scrollTop || document.documentElement.scrollTop);
 			return event.pageY;
 		},
-
-		/*这里我会使用
-			if (event.preventDefault) {
-				event.preventDefault();
-			} else {
-				event.returnValue = false;
-			}
-		*/
 		preventDefault: function (event) {
 			if (event.preventDefault) {
 				event.preventDefault();
