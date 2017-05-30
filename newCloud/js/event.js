@@ -1,6 +1,5 @@
 //点击面包屑内容生成对应子集的内容
 breadParent.on('click','a',function(e){
-	// console.log(111)
 	fun.clickGoIn($(this))
 		//功能键隐藏/显示
 	tool.funKeyShowOrHide()
@@ -12,15 +11,9 @@ filesFather.on('click','li',function(e){
 	if( $(this).data('type') !== 'folder' || $(this).data('del')){
 	 	return
 	}
-	// console.log('进入文件夹')
-		fun.clickGoIn($(this),true)
-			//功能键隐藏/显示
-		tool.funKeyShowOrHide()
-	// }
-
-	
-
-
+	fun.clickGoIn($(this),true)
+		//功能键隐藏/显示
+	tool.funKeyShowOrHide()
 })
 //单选功能
 filesFather.on('click','i',function(e){
@@ -34,7 +27,6 @@ filesFather.on('click','i',function(e){
 	}
 
 })
-//
 filesFather.on('click','.foldername',function(e){
 	
 	return false
@@ -44,15 +36,11 @@ backBox.on('click',fun.backFather)
 
 //全选功能
 allCheck.on('click',function(){
-	console.log(filesData)
-	console.log(folderBox.type)
 	if(filesData&&filesData.length==0){
-		// alertfun('没有可选项')
 		alert('没有可选项')
 		return
 	}
 	if(nameInput){
-		
 		fun.allcheckevent($(this));
 		//功能键隐藏/显示
 		tool.funKeyShowOrHide()
@@ -72,12 +60,9 @@ del.on('click',function(){
 //切换文件样式
 fileStyle.on('click',function(){
 	$(this).toggleClass('list')
-	// if($(this).hasClass('list')){
 		console.log(filesFather)
 		filesFather[filesFather.hasClass('listfile')?'addClass':'removeClass']('folders')
 		filesFather[filesFather.hasClass('listfile')?'removeClass':'addClass']('listfile')
-	// }
-	
 })
 
 
@@ -90,14 +75,12 @@ newBuild.on('click',function(){
 	}
 })
 rename.on('click',function(){
-
 	if(nameInput){
 		var li=filesFather.find('.active');
 		fun.choseRename(li)
 			//功能键隐藏/显示
 	tool.funKeyShowOrHide()
 	}
-	
 })
 filesFather.on('click','a',function(){
 	if($(this).data('del')){
@@ -105,7 +88,6 @@ filesFather.on('click','a',function(){
 	}
 	if(nameInput){
 		var li=$(this).parent()
-		// console.log($(this).parent().data('id'))
 		fun.choseRename(li)
 			//功能键隐藏/显示
 	tool.funKeyShowOrHide()
@@ -116,10 +98,7 @@ filesFather.on('click','a',function(){
 //画框
 folderBox.on('mousedown',function(e){
 	if(nameInput){
-		// console.log(1111)
-		// e.stopPropagation;
 		fun.drawRect(e)
-		//功能键隐藏/显示
 		
 		return false
 	}	
@@ -203,8 +182,6 @@ folderBox.on('contextmenu',function(e){
 //右键到文件上
 var prev=null;
 folderBox.on('contextmenu','li',function(e){
-	
-	// e.preventDefault();
 	rightKey.show()
 	if (folderBox.type=='del'){
 		rightKey.removeClass('rightKey rightFile').addClass('rightdel')
@@ -236,8 +213,7 @@ folderBox.on('contextmenu','li',function(e){
 		allCheckContent.html(tool.youChosenum())
 		
 		fun.rightKeyPosi(e)
-
-					//功能键隐藏/显示
+		//功能键隐藏/显示
 		tool.funKeyShowOrHide()
 
 
@@ -247,7 +223,7 @@ folderBox.on('click','.rightOpen',function(){
 	if(tool.chosenum(filesData)<=1){
 		// console.log(filesFather.find('li.active'))
 		fun.clickGoIn(filesFather.find('li.active'),true)
-			//功能键隐藏/显示
+		//功能键隐藏/显示
 		tool.funKeyShowOrHide()
 	}else{
 		return
@@ -257,19 +233,16 @@ folderBox.on('click','.rightDown',function(){
 	alert('还没写')
 })
 folderBox.on('click','.rightCopy',function(){
-	// filesFather.find('li.active')
 	if(nameInput){
 		fun.moveFun(true);
 	}
 })
 folderBox.on('click','.rightMove',function(){
-	// filesFather.find('li.active')
 	if(nameInput){
 		fun.moveFun();
 	}
 })
 folderBox.on('click','.rightRename',function(){
-	// tool.chosenum(filesData)<=1?fun.choseRename(filesFather.find('li.active')):return;
 	if(tool.chosenum(filesData)<=1){
 		fun.choseRename(filesFather.find('li.active'))
 	}else{
@@ -336,21 +309,16 @@ folderBox.on('click','.rightAddPage',function(){
 leftList.on('click','.getFile',function(){
 	folderBox.type='del'
 
-tool.leftInit(folderBox.type)
+	tool.leftInit(folderBox.type)
 
 });
-
 leftList.on('click','.asideList',function(){
 	folderBox.type='all'
 	tool.leftInit(folderBox.type)
 	fun.init(data,0)
 });
-
 leftList.on('click','.type',function(){
-
-	//folderBox.type='other'
 	folderBox.type=$(this).data('type')
-	//console.log( folderBox.type )
 	tool.leftInit($(this).data('type'))
 
 });

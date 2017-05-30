@@ -26,7 +26,6 @@ class SetData{
 	createTree(data,id){
 		let tree='';
 		let _this=this;
-		// <i class="wjb"></i>
 		for(var i=0;i<data.length;i++){
 			if(!data[i].checked && !data[i].del && (data[i].type=='folder'||'root')){
 				tree+=`<li data-id=${data[i].id}>
@@ -88,7 +87,6 @@ class SetData{
 				<span class="bottomLine"></span></div>
 			</a>${bread}`
 		}
-		// console.log(id)
 		return bread
 	}
 

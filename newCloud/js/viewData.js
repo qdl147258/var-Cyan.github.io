@@ -24,13 +24,11 @@ class ViewData{
 
 	//生成面包屑
 	probreads(data,id){
-	// if(id!=0){
 		//初始化面包屑导航 当id为0时 不显示
 		breadParent.html('');
 		let bread = dealDataClass.getParentsById(data, id);
 		let breads = setDataClass.createbread(bread,id);
 		breadParent.html(breads);
-		// }
 	}
 }
 

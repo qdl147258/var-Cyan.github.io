@@ -6,7 +6,6 @@ class InteractiveFunction{
 	//初始化页面
 	init(data,pid,type,typedata){
 		//还需继续添加内容
-		// console.log(folderBox.type)
 		if(filesData&&filesData.length){
 			for(var i=0;i<filesData.length;i++){
 				filesData[i].checked=false
@@ -16,7 +15,6 @@ class InteractiveFunction{
 		if(folderBox.type=='all'){
 			newFilesData =viewDataClass.profiles(data, pid)
 		}else{
-			//newFilesData =dealDataClass.getDataByType( data[0].child,type );
 			console.log(type)
 			var html = setDataClass.createFiles( typedata );
 			filesFather.html(html);
@@ -27,45 +25,26 @@ class InteractiveFunction{
 				newFilesData[i].checked=false
 			}
 		}
-		// viewDataClass.proTree(data)
-		//恢复全选内容为全选
 		allCheckContent.html('全选');
-
-
-
 		// 返回上一层
 		breadParent.children().length==1?backBox.hide():backBox.show();
 		tool.testSmallNewBuild()
-		//数据的长度是否为0 如果为0 则显示小新建，否则隐藏
- 		// tool.testfilesData(prodata)?smallNewBuild.hide():smallNewBuild.show();
-
 
 		return newFilesData
 	}
 	//点击进入
 	clickGoIn(ele,onOff){
-		 //console.log( ele.data('type') )
 		 
-
 		if(nameInput){
 			var clickid=1*(ele.parent().data('id') || ele.data('id'))
 			
-			//判断是点击面包屑进入还是点击文件进入
-			//true就是面包屑
-			/*if(onOff){
-				if(pid==clickid)return//如果点击的是自己则return
-			}*/
-		    
 		    allCheck.removeClass('active')	
 		    
 		    pid=clickid;
 		      //可能有问题
 		    filesData=this.init(data,pid);
-		    // console.log(filesData)
 		    tool.formShowOrHide()
 		}
-
-		// return false
 	}
 	//单选功能
 	selfcheck(ele){
@@ -80,9 +59,6 @@ class InteractiveFunction{
 		});
 
 		newFileData.length==tool.chosenum(filesData)?allCheck.addClass('active'):allCheck.removeClass('active')
-		// allcheck.className=checkedTrueOrFalse(prodata)?'active':'';
-		//console.log( tool.chosenum(filesData) );
-		//console.log( newFileData.length );
 	}
 	//返回上一层
 	backFather(){
@@ -178,8 +154,6 @@ class InteractiveFunction{
 			//获取的数据
 		})
 		dialogFooter.on('click','.sure',function(){
-			// console.log(filesData)
-
 			if(tool.testMandTname(filesData,clickself.child)){
 				_this.alertFun({
 					html:'不能移动到当前',
@@ -232,9 +206,7 @@ class InteractiveFunction{
 				tool.dialogTreeSOH()
 			}
 			
-			
 		})
-
 
 		dialogFooter.on('click','.cancel',function(){
 			tool.dialogTreeSOH()
@@ -242,9 +214,6 @@ class InteractiveFunction{
 		})
 			
 		tool.formShowOrHide()
-		
-
-
 	}
 
 	// 彻底删除
@@ -293,25 +262,10 @@ class InteractiveFunction{
 	    }
 
 		let fatherData=dealDataClass.getDataById(data, arrDelData[0].pId);	
-	    // let fatherData=[];
-	    // for(var i=0;i<arrDelData.length;i++){
-	    // 	fatherData.push(dealDataClass.getDataById(data, arrDelData[i].pId))
-	    // }
-	    //console.log(fatherData)
-
-
-
-	    // console.log(fatherData[0].child)
 	        for(var i=0;i<fatherData.child.length;i++){
 		     	for(var j=0;j<arrDelData.length;j++){
 		        	if(fatherData.child[i].id==arrDelData[j].id){
 		        		fatherData.child[i].del=true
-		        		// // if(moveOrcopy){
-		        		// // 	recoveryData.push(fatherData.child.splice(i,1))
-		        		// // }else{
-		        		// // 	console.log(还没写)
-		        		// // }
-		          		
 			          	if(allCheck.hasClass('active')){
 			        		allCheck.removeClass('active');
 			      		}
@@ -324,9 +278,6 @@ class InteractiveFunction{
 	}
 	// 新建功能函数
 	clickNewBuild(data,pid){
-		  //全选相关
-	    //让全选的对号去掉
-	    // var n=0;
 	    allCheck.removeClass('active');
 	    allCheckContent.html('全选');
 	    if(filesData&&filesData.length){
@@ -352,7 +303,6 @@ class InteractiveFunction{
 	    filesFather.prepend(li, filesFather.first()) 
 	    let input=$('.newInput') ;
 	    input.focus();
-
 
 	    let _this=this
         input.on('blur',function(){
@@ -384,7 +334,6 @@ class InteractiveFunction{
 		//恢复全选内容为全选
 		allCheckContent.html('全选');
 		allCheck.removeClass('active')
-		
 
 		//获取数据及标签
 		nameInput=false;
@@ -400,8 +349,6 @@ class InteractiveFunction{
 		    //-------------------------
 		    //让input显示
 	        thisform.addClass('active')
-	        //原来的名字
-	    	// var thisInputVal=thisinput.val(selfname)
 	    	//选中
 	   		thisinput.select();
 	   		var _this=this
@@ -411,10 +358,6 @@ class InteractiveFunction{
 	        var thisinputNewName=thisinput.val().trim()
 	      	//-------------没起名----------------
 	      	if(thisinputNewName==''){
-		   //    		_this.alertFun({
-					// 	parentEle:true,
-					// 	html:'新建文件时记得起名字呦'
-					// })
 		        thisform.removeClass('active')
 		        father.removeClass('active')
 	      	}else if(tool.compare(thisinputNewName,otherdata)){
@@ -442,18 +385,15 @@ class InteractiveFunction{
 		var target=e.target;
 		if(!$(target).hasClass('folder'))return
 			var div=$(`<div style="position:absolute;background:rgba(0,0,0,.5)"></div>`)
-		// 有问题
 		e.preventDefault();
 		e.stopPropagation();
 			folderBox.prepend(div, folderBox.first()) 
 			var downx=e.pageX,downy=e.pageY;
 			var _this=this;
-			//有问题
 			$(document).on('mousemove',function(e){
 				_this.moveFn(e,div,downx,downy)	
 			})
 			$(document).on('mouseup',_this.upFn)
-		// return false
 	}
 
 	moveFn(e,div,downx,downy){
@@ -478,8 +418,6 @@ class InteractiveFunction{
 			allCheckContent.html(tool.youChosenum())
 	}
 	upFn(){
-		// console.log('upfn')
-
 		var _this=this;
 		$(document).off('mouseup',_this.upFn)
 		$(document).off('mousemove',_this.moveFn)
@@ -492,9 +430,7 @@ class InteractiveFunction{
 // 右键位置
 rightKeyPosi(e){
 	
-
 		var x = e.pageX-folderBox.offset().left, y = e.pageY-folderBox.offset().top;
-		// console.log(x,y)
 //       // 当鼠标的x坐标距离屏幕可视区右侧的距离大于菜单的宽度的时候
 //       // 那么这个菜单就出现在鼠标的右侧，否则就出现在鼠标的左侧。
 		rightKey.css({

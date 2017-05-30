@@ -9,6 +9,5 @@ var tool= new JudgmentAndTools();
 
 //初始化页面
 var filesData=fun.init(data,pid)
-// folderBox.type='all';
 
 

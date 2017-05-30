@@ -67,6 +67,4 @@ var rightKey=$('.rk')
 
 var leftList=$('.asideMain')
 
-var recoveryData=[]
-
-// var recoveryStatus=false
+var recoveryData=[];

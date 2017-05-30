@@ -49,13 +49,11 @@ class JudgmentAndTools{
 	
 	// 判断已选中几个文件,如果为0则显示全选
 	youChosenum(){
-		// console.log(this.chosenum(filesData))
 	  let choseinnerHTML;
 	  return choseinnerHTML=this.testCheckedTrue(filesData)?`已选中${this.chosenum(filesData)}个文件/文件夹`:'全选';
 	}
 
 	funKeyShowOrHide(){
-		// console.log(111)
 		var _this=this
 		var arr=[newBuild,copy,move,rename,del]
 		arr.forEach(function(item){
@@ -310,7 +308,6 @@ class JudgmentAndTools{
 
     // 判断点击的类型
     clickType(type,thisDataType){
-      //console.log(data[0].child,$(this).data('type'))
       switch(type){
         case 'all':
           return dealDataClass.getChildrenById(data,pid);;
@@ -337,16 +334,12 @@ class JudgmentAndTools{
 			}
 
 		}
-
-		//console.log(prodata)
-		// viewDataClass.proTree(data)
 		//恢复全选内容为全选
 		allCheckContent.html('全选');
 		allCheck.removeClass('active')
 
 		this.testSmallNewBuild()
-		// tool.testfilesData(prodata)?smallNewBuild.hide():smallNewBuild.show();
-
+		
 		//功能键隐藏/显示
 		tool.funKeyShowOrHide()
 
@@ -355,8 +348,6 @@ class JudgmentAndTools{
 		filesFather.html(html);
 
     }
-
-
 	//数据的长度是否为0 如果为0 则显示小新建，否则隐藏
     testSmallNewBuild(){
     	if(folderBox.type=='all'){
