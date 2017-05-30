@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/btn.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+</head>
+<body>
+	<div id="cloudAll">
+		<!-- 左侧内容s -->
+		<aside id="cloudAside">
+			<div class="asideModule">
+				<ul class="asideMain">
+					<li class="asideList">
+						<a class="btn-1-2" href="javascript:;">
+							<i class="icon iconfont icon-wenjianjia"></i><em>全部文件</em>
+						</a>
+					</li>
+					<li class="type" data-type="pic">
+						<a class="btn-3" href="javascript:;">
+							<span><i class="icon iconfont icon-tupian"></i><em>图片</em></span>
+						</a>
+					</li>
+					<li class="type"  data-type="doc">
+						<a class="btn-2" href="javascript:;">
+							<i class="icon iconfont icon-wendang"></i><em>文档</em>
+						</a>
+					</li>
+					<li class="type"  data-type="movie">
+						<a class="btn-4" href="javascript:;">
+							<span><i class="icon iconfont icon-shipin"></i><em>视频</em></span>
+						</a>
+					</li>
+					<li class="type"  data-type="seed">
+						<a class="btn-5" href="javascript:;">
+							<i class="icon iconfont icon-btzhongzi"></i><em>种子</em>
+						</a>
+					</li>
+					<li class="type"  data-type="mp3">
+						<a class="btn-6" href="javascript:;">
+							<i class="icon iconfont icon-yinle"></i><em>音乐</em><span></span>
+						</a>
+					</li>
+					<li class="type" data-type="other">
+						<a class="btn-7" href="javascript:;">
+							<span><i class="icon iconfont icon-qita"></i><em>其它</em></span>
+						</a>
+					</li>
+				<!-- 	<li class="">
+						<a href="javascript:;">
+							<i>icon</i><span>我的分享</span>
+						</a>
+					</li> -->
+					<li class="getFile">
+						<a class="btn-10" href="javascript:;">
+							<span><i class="icon iconfont icon-huishouzhan2"></i><em>回收站</em></span>
+						</a>
+					</li>
+				</ul>
+<!-- 				<div class="asideRemaining">
+					<div class="asideScoll">
+						<span class="asideScollRect"></span>
+					</div>
+					<div class='asideScollContent fl'>
+						<span class="asideScollUsed">1.08G</span>/<span class="asideScollTotal">5G</span>
+					</div>
+					<div class='asideScollAdd fr'>扩容</div>
+				</div> -->
+			</div>
+		</aside>
+		<!-- 左侧内容e -->
+		<section id="cloudMain">
+
+			<div class="mainHead">
+				<div class="mainHeadBox">
+					<div class="listOrGrid fr icon iconfont icon-xianshimoshisuolvetu">
+					<!-- 变成列表模式 添加list -->
+						<a class="MainListBtn" href="javascript:;"></a>
+						<a class="MainGridBtn" href="javascript:;"></a>
+					</div>
+					<!-- 排序s -->
+					<div class="sortBtn fr">
+						<div class="icon iconfont icon-sort"></div>
+						<ul class="sortSwitchUl">
+							<li class="sortName">
+								<em class="icon iconfont icon-wenjianmingpaixucloudfog"></em><span>文件名</span>
+							</li>
+							<li class="sortSize">
+								<em class="icon iconfont icon-andaxiaopaixu"></em><span>大小</span>
+							</li>
+							<li class="sortData">
+								<em class="icon iconfont icon-antianjiashijianpaixu"></em><span>修改日期</span>
+							</li>
+						</ul>
+					</div>
+					<!-- 排序e -->
+					<!-- 搜索文件s -->
+<!-- 					<div class="searchBtn fr">
+						<div class="searchFromBox">
+							<form>
+								<input type="text" placeholder="画框有问题 ">
+
+							</form>
+							<span class="searchGlass">
+								JZ
+							</span>
+						</div>
+					</div> -->
+					<!-- 搜索文件e -->
+					<nav class="funNav fl">
+						<a class="newBuild" href="javascript:;">
+							<em class="icon iconfont icon-xinjianwenjianjia"></em><span>新建文件夹</span><span class="bottomLine"></span>
+						</a>
+						<a class="delete" href="javascript:;">
+							<em class="icon iconfont icon-shanchu"></em><span>删除</span><span class="bottomLine"></span>
+						</a>
+						<a class="rename" href="javascript:;">
+							<em  class="icon iconfont icon-zhongmingming"></em><span>重命名</span><span class="bottomLine"></span>
+						</a>
+						<a class="copy" href="javascript:;">
+							<em class="icon iconfont icon-fuzhi"></em><span>复制</span><span class="bottomLine"></span>
+						</a>
+						<a class="move" href="javascript:;">
+							<em class="icon iconfont icon-icyidongdao24px"></em><span>移动到</span><span class="bottomLine"></span>
+						</a>
+					</nav>
+				</div>
+			</div>
+
+			<div class="mainListAndLoad">
+				<div class="backBox fl">
+					<a class="back fl" href="javascript:;">返回上一级</a>
+					<span class="backBoxBg"></span>
+					<span class="backTree fl"></span>
+				</div>
+				<!-- 面包屑开始 -->
+				<div class="breadParent fl">
+				</div>
+				<!-- 面包屑结束 -->
+				<div class="load fr">
+					已全部加载，共2个
+				</div>
+			</div>
+			<div class="allCheckBox">
+				<div class="allCheck fl">
+					<i></i>
+					<span></span>
+				</div>
+			</div>
+			<div class="folder" >
+				<a class="smallNewBuild" href="javascript:;"></a>
+				<!-- <ul class="listfile clearfix"> -->
+				<!-- 不能删 -->
+				<ul class="folders clearfix">
+				<!-- 	<li>
+						<i class='checkbox'></i>
+						<span class='folderimg'></span>
+						<a class='foldername' href="javascript:;">新建文件夹</a>
+						<div class='more'>
+							<span>3G</span>
+							<time>2012/03/01 22:10:10</time>
+						</div>
+						<form class="change-foldername ">
+							<input type="text" class="change">
+						</form>
+					</li>
+					<li>
+						<i class='checkbox'></i>
+						<span class='folderimg'></span>
+						<a class='foldername' href="javascript:;">新建文件夹</a>
+						<div class='more'>
+							<span>3G</span>
+							<time>2012/03/01 22:10:10</time>
+						</div>
+						<form class="change-foldername ">
+							<input type="text" class="change">
+						</form>
+					</li> -->
+					
+					
+				</ul>
+				<div class="rk">
+				<!-- rightFile -->
+				<!-- rightdel -->
+					<div class="hasfile">
+					<span></span>
+						<a class="rightOpen" href="javascript:;">打开<span></span></a>
+						<a class="rightDown" href="javascript:;">下载<span></span></a>
+						<a class="rightCopy" href="javascript:;">复制到<span></span></a>
+						<a class="rightMove" href="javascript:;">移动到<span></span></a>
+						<a class="rightRename" href="javascript:;">重命名<span></span></a>
+						<a class="rightDel" href="javascript:;">删除<span></span></a>
+					</div>
+					<div class="rightdelete">
+						<a class="rightBack" href="javascript:;">还原<span></span></a>
+						<a class="rightDelete" href="javascript:;">删除<span></span></a>
+					</div>
+
+					<div class="noFile">
+						<!-- <div>排序 -->
+							<div class='border'>
+								<a class="rightFileName" href="javascript:;">按文件名排序<span></span></a>
+								<a class="rightFileSize" href="javascript:;">按文件大小排序<span></span></a>
+								<a class="rightFileData" href="javascript:;">按修改日期排序<span></span></a>
+							</div>
+						<!-- </div> -->
+					<!-- 	<div>
+							显示方式 -->
+							<div class='border'>
+								<a class="rightList" href="javascript:;">列表显示<span></span></a>
+								<a class="rightThumbnail" href="javascript:;">缩略图显示<span></span></a>
+							</div>
+						<!-- </div> -->
+						<a class="rightNewBuild" href="javascript:;">新建文件夹<span></span></a>
+						<a class="rightAddPage" href="javascript:;">重新加载页面<span></span></a>
+					</div>
+
+
+				</div>
+			</div>
+			
+		</section>
+		<div class="dialogFileTree">
+			<header class="dialogFileTreeHead">
+				<h3>
+					<span class="dialog-header-title">
+						<em class="select-text">
+							移动到
+						</em>
+					</span>
+				</h3>
+				<div class="dialog-control">
+					<div class="dialog-close">
+						X
+					</div>
+				</div>
+			</header>
+			<div class="dialog-body">
+				<div class="file-tree-container">
+					<ul>
+					
+					</ul>
+				</div>
+			</div>
+			<div class="dialog-footer clearfix">
+				<a class="dialog-footer-btn cancel fr" href="javascript:;">取消</a>
+				<a class="dialog-footer-btn sure fr" href="javascript:;">确定</a>
+				
+			</div>
+		</div>	
+		<!-- 遮罩层s -->
+		 <div class="mask">
+		</div> 
+		<!-- 遮罩层e -->
+		<!-- 弹出框s -->
+		<div class="alertWrap">
+			<div class="alertContent">	
+				不能移动到子第三方士大夫是的集以及子集一下
+			</div>
+			<div class="alertBtnBox">
+				<button class="yes">确定</button>
+				<button class="no">取消</button>
+			</div>
+		</div>
+		<!-- 弹出框e -->
+
+
+
+
+		<!-- 头部s -->
+		<header id="cloudHead">
+			<h1 class="logo fl">
+				<a class='logoPig' href="javascript:;"></a>
+			</h1>
+			<div class="user fr">
+				<a class="userHead fl" href="javascript:;">
+					<img src="./img/head2.jpg">
+				</a>
+				<span class="userName fl">var-Cyan</span>
+			</div>
+
+		</header>
+		<!-- 头部e -->
+	</div>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script src="js/transit.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/var.js"></script>
+	<script src="js/dialog.js"></script>
+	<script src="js/drag.js"></script>
+	<script src="js/dealData.js"></script>
+	<script src="js/setData.js"></script>
+	<script src="js/viewData.js"></script>
+	<script src="js/JudgmentAndTools.js"></script>
+	<script src="js/fun.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/event.js"></script>
+</body>
+</html>
