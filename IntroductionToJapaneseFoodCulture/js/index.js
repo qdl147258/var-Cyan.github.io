@@ -409,7 +409,6 @@
 		setImage.prev();
 		setImage.autoPlay();
 	});
-
 	// menu 点击事件
 
 	// 目前的状态， 用于点击menu时跳转指向的目标
@@ -418,7 +417,6 @@
 	var nowHash = 'main';
 	// 用于存放，要渲染页的文字内容
 	var data;
-
 	//	导航页
 	var menuPage =  new SetMainImage('#mainImagArea');//
 	// 点击menu 出现的页面 导航盒子
@@ -433,8 +431,6 @@
 	var contactBox = new IntroBox('#contactPage .spanBox');
 
 	var canTab = false;
-
-
 
 	// 初始化   把 导航页的 shouFn  和 hideFn 替换一下
 	menuPage.init({
@@ -528,9 +524,6 @@
 			$('#menuBox').fadeOut(600);
 		}
 	});
-
-
-
 	// 初始化contact页面的内容
 	// 把canract对应的页面数据 及 函数 替换一下
 	contactPage.init({//-
@@ -551,8 +544,6 @@
 			$('#menuBox').fadeOut(600);
 		}
 	});
-
-
 	// 头部的点击事件
 	$('#header').on('click.menu touchstart', '.menu', function () {
 		// 如果menuCanTab为假  则热跳出函数
@@ -582,7 +573,6 @@
 		$('#menuBox .spanBox').animate({
 			top: $(_this).position().top
 		})
-
 	})
 
 	// 当hash变化时触发的事件
@@ -596,7 +586,6 @@
 				$('#mainImagArea').addClass('bgBlue');
 				//menu的背景变为青色
 				$('.menu').addClass('sonStyle');
-
 				backMenu();
 				nowHash = 'menu';
 				// window.location.hash = '';
@@ -607,7 +596,6 @@
 				// 青色背景去掉
 				$('.menu').removeClass('sonStyle');
 				// menu导航盒子隐藏
-
 				menuBox.hideBox();
 				nowHash = 'main';
 				$('#menuBox').fadeOut(600,function () {
@@ -642,10 +630,7 @@
 			default:
 				break;
 		}
-		
-
 	}
-
 
 	// 由于 menu 功能指向具有多样性，所以单独使用一个方法，进行区分
 
@@ -673,23 +658,19 @@
 				break;
 
 			case 'contact': {
-
 				menuPage.now();
-
 				contactBox.hideBox();
 				$('#contactPage').fadeOut(800);
 				$('#sideImg').fadeOut();
 				targetHash = 'contact';
 				break;
 			}
-			// default:
-			// 	// statements_def
-			// 	break;
+			default:
+				break;
 		}
 	}
 
-//
-	var mainAreaChange = {//-
+	var mainAreaChange = {
 		in: function (mainData, newHash) {
 
 			data = new DealData(mainData);
@@ -759,7 +740,7 @@
 		}
 	}, false);
 
-		// sideBar 的功能实现 小圆点
+	// sideBar 的功能实现 小圆点
 
 	$('#sideBar').on('click.bar', 'a', function (ev) {
 		var _this = this;
@@ -770,17 +751,14 @@
 		$(this).siblings().removeClass('active');
 		$(this).addClass('active');
 		execPage.next(index ,function () {
-			// data = new DealData(pageData);
 			tabStyle(index);
 			$('#execBox .title').html($(_this).html());
 			$('#execBox .artical').html(data.setLayOut(index));
 			myScroll.scrollTo(0, 0);
 			$('#refrash').fadeOut()
-
-
 		});
 	})
-//显示不同的背景及对应的样式
+	//显示不同的背景及对应的样式
 	function tabStyle (index) {
 		index%=2;
 		if(!index) {
