@@ -10,12 +10,16 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width:100%;
-  height:100%;
-}
+<style  lang="less">
+	@rem:40rem;
+	html,body{
+		height:100%;
+	}
+	#app{
+		height: 100%;
+		.iconfont{
+			font-size:56/@rem;
+			color:#fff;
+		}
+	}
 </style>

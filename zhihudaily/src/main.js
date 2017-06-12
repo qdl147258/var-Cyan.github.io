@@ -2,20 +2,30 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import appCss from './assets/css/app.css'
-//请求数据
-import Axios from 'axios'
-import VueAxios from 'vue-axios'
-Vue.use(VueAxios,Axios)
-//轮播图
-import 'mint-ui/lib/style.css'
-import Mint from 'mint-ui';
-Vue.use(Mint);
 
-import store from './store/vuex'
+import router from './router'
+import store from './store'
+
+import 'mint-ui/lib/style.css'
+import { Lazyload } from 'mint-ui'
+Vue.use(Lazyload)
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios,axios)
+
+/*import VueResource from 'vue-resource'
+Vue.use(VueResource)*/
+
+/*import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  loading: '/static/loading.gif'
+})*/
 
 Vue.config.productionTip = false
+
+// MintUI.Indicator.open()
+import './assets/css/app.css'
 
 /* eslint-disable no-new */
 new Vue({
